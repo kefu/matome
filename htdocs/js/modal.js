@@ -4,9 +4,11 @@ $(document).ready(function(){
         // get param
         var imgsrc = $(this).attr("src");
         var imglink = $(this).parent("a").attr("href");
+        var title = $(this).parent("a").parent("span").prev("h5").children("a").children("span").text();
         if(typeof imgsrc === "undefined"){
             imgsrc = $(this).parent("a").parent("h5").next("span").children("a").children("img").attr("src");
             imglink = $(this).parent("a").attr("href");
+            title = $(this).text();
         }
         var modalpos = function(p){
             var pos = {};
@@ -49,6 +51,7 @@ $(document).ready(function(){
             zIndex : "9999"
         });
         $("#modalmain").append(' <div id="bigimg"> <a href="' + imglink + '" target="_blank"> <img src="' + imgsrc + '" alt="" style="width:95%; height:auto; margin:2%; border:solid #000 1px;" id="bigimgsrc"> </a> </div> ');
+        $("#modalheader p").text(title);
         $("#bigimgsrc").hover(function(){
             $(this).css("border", "solid orange 2px");
         },function(){
@@ -84,7 +87,7 @@ $(document).ready(function(){
             }
             $("body").append(modalmask);
         }
-        $(".ModalMask").fadeTo(50, 0.3);
+        $(".ModalMask").fadeTo("nomal", 0.3);
 
     });
 
@@ -95,6 +98,14 @@ $(document).ready(function(){
         $("#modal").css("position", "static");
         $("#modal").css("display", "none");
     });
+    // close modal
+    $("#modalclose").live("click", function(){
+        $(".ModalMask:not(.modal)").hide();
+        $("#modalmain").html("");
+        $("#modal").css("position", "static");
+        $("#modal").css("display", "none");
+    });
+
     /*$("#bigimg > a").live("click", function(){
         $(".ModalMask").hide();
         $("#modalmain").html("");

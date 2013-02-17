@@ -105,3 +105,9 @@ img{
     backgroud-color : white;
     z-index : 9999;
 }
+
+#modalclose{
+    display : block;
+    width : 5%;
+    float : right;
+}

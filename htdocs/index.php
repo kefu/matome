@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="content-style-type" content="text/css">
 <meta http-equiv="content-script-type" content="text/javascript">
-<meta name="description" content="2次元画像イラストリンク。イメージメインで見やすいサイトを目指します。">
+<meta name="description" content="2次元画像イラストまとめ。">
 <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/modal.js"></script>
@@ -18,7 +18,7 @@
 <div id="contents">
 <div id="contents-inner">
 <!-- コンテンツ -->
-<!--<p>パンくず</p>-->
+<p>パンくず</p>
 <?php
 $data = unserialize(file_get_contents("moeimg"));
 foreach($data as $value){
@@ -46,15 +46,12 @@ right
 </div><!-- /right-sidebar -->
 <div id="footer">
 <p>footer</p>
-<br>
-<br>
-<br>
-<p>footer</p>
 </div><!-- /footer -->
 </div><!-- /wrapper -->
 <div id="modal" style="display:none">
+<span id="modalclose"><img src="./img/closebutton.gif" alt="閉じる"></span>
 <div id="modalheader">
-modalheader
+<p></p>
 </div><!-- modalheader -->
 <div id="modalmain">
 modalmain
